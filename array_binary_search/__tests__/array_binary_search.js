@@ -14,5 +14,5 @@ describe('binarySearch', ()=> {
 
   it('can check if the element exists', () => {
     expect(binarySearch([1,2,3,4,5], 7)).toEqual(-1);
-  })
-})
+  });
+});

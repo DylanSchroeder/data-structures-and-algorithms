@@ -6,11 +6,11 @@ function binarySearch(array, searchKey) {
 
   var index;
   var element;
-var count = 0;
+  var count = 0;
   while (min <= max && count++ < 100) {
     index = Math.floor((min + max) / 2);
     element = array[index];
-    console.log({ array, searchKey, count, min, index, max, element})
+    
 
     
     if(element < searchKey) {
