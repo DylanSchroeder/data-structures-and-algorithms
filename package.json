@@ -9,7 +9,7 @@
     "jest": "^23.5.0"
   },
   "scripts": {
-    "eslint": "eslint .",
+    "lint": "eslint .",
     "test": "jest"
   },
   "repository": {
