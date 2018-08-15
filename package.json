@@ -5,9 +5,11 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "eslint": "^5.3.0",
     "jest": "^23.5.0"
   },
   "scripts": {
+    "eslint": "eslint .",
     "test": "jest"
   },
   "repository": {
