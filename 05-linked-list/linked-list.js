@@ -26,9 +26,20 @@ LinkedList.prototype.push = function(val) {
   }
 };
 
-//TODO includes
 
-// LinkedList.prototype.includes
+
+LinkedList.prototype.includes = function(value) {
+  let current = this.head;
+  while(current.next !== null && current.value !== value) {
+    current = current.next;
+  }
+  if(current.value === value) {
+    return true;
+  }
+  else if(current.next === null) {
+    return false;
+  }
+};
 
 LinkedList.prototype.insertNode = function(value) {
   var node = {
