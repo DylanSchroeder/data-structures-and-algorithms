@@ -7,27 +7,6 @@ function LinkedList(){
   this.head = null;
 }
 
-LinkedList.prototype.push = function(val) {
-  var node = {
-    value: val,
-    next: null,
-
-  };
-  if(!this.head) {
-    this.head = node;
-  }
-  else {
-    let current = this.head;
-
-    while(current.next) {
-      current = current.next;
-    }
-    current.next = node;
-  }
-};
-
-
-
 LinkedList.prototype.includes = function(value) {
   let current = this.head;
   while(current.next !== null && current.value !== value) {
@@ -49,5 +28,24 @@ LinkedList.prototype.insertNode = function(value) {
   this.head = node;
 
 };
+
+// LinkedList.prototype.push = function(val) {
+//   var node = {
+//     value: val,
+//     next: null,
+
+//   };
+//   if(!this.head) {
+//     this.head = node;
+//   }
+//   else {
+//     let current = this.head;
+
+//     while(current.next) {
+//       current = current.next;
+//     }
+//     current.next = node;
+//   }
+// };
 
 module.exports = LinkedList;
