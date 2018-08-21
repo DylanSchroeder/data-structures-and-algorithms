@@ -16,7 +16,6 @@ describe('insert node', ()=> {
       let listTest = new linkedList();
       listTest.insertNode(10);
       listTest.insertNode(20);
-      console.log(listTest);
       
       expect(listTest.includes(10)).toBe(true);
       expect(listTest.includes(15)).toBe(false);
@@ -51,6 +50,19 @@ describe('insert node', ()=> {
         expect(ib).toEqual({ head: { value: 30, next: { value: 15, next: { value: 20, next: { value: 10, next: null } } } } });
       });
     });
+
+    // describe('insertAfter', ()=> {
+    //   it('can insert a new node after the first value node', ()=> {
+    //     let ia = new linkedList();
+    //     ia.insertNode(10);
+    //     ia.insertNode(20);
+    //     ia.insertNode(30);
+    //     ia.insertAfter(20, 15);
+    //     console.log(ia);
+
+    //     expect(ia).toEqual({ head: { value: 30, next: { value: 20, next: { value: 15, next: { value: 10, next: null } } } } });
+    //   });
+    // });
 
   });
   
