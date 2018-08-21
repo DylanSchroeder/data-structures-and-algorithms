@@ -54,18 +54,39 @@ describe('linked-list', ()=> {
       });
     });
 
-    // describe('insertAfter', ()=> {
-    //   it('can insert a new node after the first value node', ()=> {
-    //     let ia = new linkedList();
-    //     ia.insertNode(10);
-    //     ia.insertNode(20);
-    //     ia.insertNode(30);
-    //     ia.insertAfter(20, 15);
-    //     console.log(ia);
+    describe('insertAfter', ()=> {
+      it('can insert a new node after the first value node', ()=> {
+        let ia = new linkedList();
+        ia.insertNode(10);
+        ia.insertNode(20);
+        ia.insertNode(30);
+        ia.insertAfter(20, 15);
+        console.log(ia);
 
-    //     expect(ia).toEqual({ head: { value: 30, next: { value: 20, next: { value: 15, next: { value: 10, next: null } } } } });
-    //   });
-    // });
+        expect(ia).toEqual({ head: { value: 30, next: { value: 20, next: { value: 15, next: { value: 10, next: null } } } } });
+      });
+
+      it('throws when inserting after value that does not exist', () => {
+        let ia = new linkedList();
+
+        // Option 1 for testing errors:
+        try {
+          ia.insertAfter(20, 15);
+          // Should never get here because we expect to throw
+          throw new Error('should have failed');
+        } catch (err) {
+          expect(err).toBeDefined();
+          expect(err.message).toBe('value not found');
+        }
+
+        ia.insertNode(10);
+        // Option 2 for testing errors:
+        expect(() => {
+          ia.insertAfter(20, 15);
+          console.log(ia);
+        }).toThrow('value not found');
+      });
+    });
 
   });
   
