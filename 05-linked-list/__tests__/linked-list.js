@@ -40,6 +40,18 @@ describe('insert node', ()=> {
       });
     });
 
+    describe('insertBefore', ()=> {
+      it('can insert a new node before the first value node', ()=> {
+        let ib = new linkedList();
+        ib.insertNode(10);
+        ib.insertNode(20);
+        ib.insertNode(30);
+        ib.insertBefore(20, 15);
+
+        expect(ib).toEqual({ head: { value: 30, next: { value: 15, next: { value: 20, next: { value: 10, next: null } } } } });
+      });
+    });
+
   });
   
 });

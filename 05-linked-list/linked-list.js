@@ -48,4 +48,20 @@ LinkedList.prototype.append = function(val) {
   }
 };
 
+LinkedList.prototype.insertBefore = function(val, newVal) {
+  var node = {
+    value: newVal,
+    next: null,
+  };
+  
+  let current = this.head;
+  
+  while(current.next !== null && current.next.value !== val) {
+    current = current.next;
+  }
+  let newNode = current.next;
+  node.next = newNode;
+  current.next = node;
+};
+
 module.exports = LinkedList;
