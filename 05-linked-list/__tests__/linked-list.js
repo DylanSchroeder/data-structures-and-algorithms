@@ -16,6 +16,7 @@ describe('insert node', ()=> {
       let listTest = new linkedList();
       listTest.insertNode(10);
       listTest.insertNode(20);
+      console.log(listTest);
       
       expect(listTest.includes(10)).toBe(true);
       expect(listTest.includes(15)).toBe(false);
@@ -32,8 +33,10 @@ describe('insert node', ()=> {
       it('can add a new node to the end of the list', ()=> {
         let appendList = new linkedList();
         appendList.append(50);
+        appendList.insertNode(20);
 
         expect(appendList.includes(50)).toBe(true);
+        expect(appendList).toEqual({ head: { value: 20, next: { value: 50, next: null } } } );
       });
     });
 
