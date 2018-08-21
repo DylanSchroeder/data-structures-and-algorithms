@@ -27,6 +27,16 @@ describe('insert node', ()=> {
         expect(noList.head).toBe(null);
       });
     });
+
+    describe('append', ()=> {
+      it('can add a new node to the end of the list', ()=> {
+        let appendList = new linkedList();
+        appendList.append(50);
+
+        expect(appendList.includes(50)).toBe(true);
+      });
+    });
+
   });
   
 });

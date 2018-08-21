@@ -29,23 +29,23 @@ LinkedList.prototype.insertNode = function(value) {
 
 };
 
-// LinkedList.prototype.push = function(val) {
-//   var node = {
-//     value: val,
-//     next: null,
+LinkedList.prototype.append = function(val) {
+  var node = {
+    value: val,
+    next: null,
 
-//   };
-//   if(!this.head) {
-//     this.head = node;
-//   }
-//   else {
-//     let current = this.head;
+  };
+  if(!this.head) {
+    this.head = node;
+  }
+  else {
+    let current = this.head;
 
-//     while(current.next) {
-//       current = current.next;
-//     }
-//     current.next = node;
-//   }
-// };
+    while(current.next) {
+      current = current.next;
+    }
+    current.next = node;
+  }
+};
 
 module.exports = LinkedList;
