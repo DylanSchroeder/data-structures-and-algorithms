@@ -77,7 +77,7 @@ describe('linked-list', ()=> {
         klist.insertNode(2);
         klist.insertNode(1);
 
-        expect(klist.kFromEnd(3)).toEqual(2);
+        expect(klist.kFromEnd(3).value).toEqual(2);
       });
     });
 
