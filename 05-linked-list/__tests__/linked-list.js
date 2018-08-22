@@ -65,7 +65,20 @@ describe('linked-list', ()=> {
 
         expect(ia).toEqual({ head: { value: 30, next: { value: 20, next: { value: 15, next: { value: 10, next: null } } } } });
       });
+    });
 
+    describe('kFromEnd', ()=> {
+      it('can return a nodes value that is k from the end of the list', () => {
+        let klist = new linkedList();
+
+        klist.insertNode(5);
+        klist.insertNode(4);
+        klist.insertNode(3);
+        klist.insertNode(2);
+        klist.insertNode(1);
+
+        expect(klist.kFromEnd(3)).toEqual(2);
+      });
     });
 
   });
