@@ -1,7 +1,5 @@
 'use strict';
 
-let linkedList = new LinkedList();
-
 
 function LinkedList(){
   this.head = null;
@@ -82,6 +80,22 @@ LinkedList.prototype.insertAfter = function(val, newVal) {
   }
   newNode.next = foundNode;
   current.next = newNode;
+};
+
+LinkedList.prototype.kFromEnd = function(k) {
+  let currentNode = this.head;
+  let count = 1;
+
+  while(currentNode.next){
+    currentNode = currentNode.next;
+    count ++;
+  }
+  currentNode = this.head;
+
+  for(let i = 1; i < (count - k); i ++) {
+    currentNode = currentNode.next;
+  }
+  return currentNode;
 };
 
 module.exports = LinkedList;
