@@ -64,4 +64,24 @@ LinkedList.prototype.insertBefore = function(val, newVal) {
   current.next = node;
 };
 
+LinkedList.prototype.insertAfter = function(val, newVal) {
+  var newNode = {
+    value: newVal,
+    next: null,
+  };
+  let current = this.head;
+  if (current == null) {
+    throw new Error('value not found');
+  }
+  while(current.next !== null && current.value !== val) {
+    current = current.next;
+  }
+  let foundNode = current.next;
+  if (!foundNode) {
+    throw new Error('value not found');
+  }
+  newNode.next = foundNode;
+  current.next = newNode;
+};
+
 module.exports = LinkedList;
