@@ -2,13 +2,16 @@
 
 const linkedList = require('../linked-list');
 
-describe('insert node', ()=> {
-  it('adds a new node to the head of the list', ()=>{
-    let newList = new linkedList();
-    newList.insertNode(5);
+describe('linked-list', ()=> {
 
-    expect(newList.head).not.toBe(null);
-    expect(newList.head.value).toBe(5);
+  describe('insert node', ()=> {
+    it('adds a new node to the head of the list', ()=>{
+      let newList = new linkedList();
+      newList.insertNode(5);
+
+      expect(newList.head).not.toBe(null);
+      expect(newList.head.value).toBe(5);
+    });
   });
 
   describe('includes', ()=> {
@@ -51,18 +54,32 @@ describe('insert node', ()=> {
       });
     });
 
-    // describe('insertAfter', ()=> {
-    //   it('can insert a new node after the first value node', ()=> {
-    //     let ia = new linkedList();
-    //     ia.insertNode(10);
-    //     ia.insertNode(20);
-    //     ia.insertNode(30);
-    //     ia.insertAfter(20, 15);
-    //     console.log(ia);
+    describe('insertAfter', ()=> {
+      it('can insert a new node after the first value node', ()=> {
+        let ia = new linkedList();
+        ia.insertNode(10);
+        ia.insertNode(20);
+        ia.insertNode(30);
+        ia.insertAfter(20, 15);
+        console.log(ia);
 
-    //     expect(ia).toEqual({ head: { value: 30, next: { value: 20, next: { value: 15, next: { value: 10, next: null } } } } });
-    //   });
-    // });
+        expect(ia).toEqual({ head: { value: 30, next: { value: 20, next: { value: 15, next: { value: 10, next: null } } } } });
+      });
+    });
+
+    describe('kFromEnd', ()=> {
+      it('can return a nodes value that is k from the end of the list', () => {
+        let klist = new linkedList();
+
+        klist.insertNode(5);
+        klist.insertNode(4);
+        klist.insertNode(3);
+        klist.insertNode(2);
+        klist.insertNode(1);
+
+        expect(klist.kFromEnd(3).value).toEqual(2);
+      });
+    });
 
   });
   
